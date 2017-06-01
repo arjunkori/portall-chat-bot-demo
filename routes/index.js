@@ -211,7 +211,7 @@ router.get('/', function(req, res, next) {
                                 "type": "groupMessage",
                                 "data": {
                                     "chatUser": "GA ChatBot",
-                                    "chatMsg": "Opps! entered search not found",
+                                    "chatMsg": "Sorry I am having trouble understanding your question.\nPlease try some different question.",
                                     "chatTime": _unixTimeStamp,
                                     "image": 'http://seeklogo.com/images/G/google-2015-icon-logo-B4217923DD-seeklogo.com.png',
                                     "botMsg": false
