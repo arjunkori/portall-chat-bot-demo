@@ -4,9 +4,15 @@ var PubNub = require('pubnub');
 var router = express.Router();
 var utility = require('./utility');
 
-global.pubnub = new PubNub({
+/*global.pubnub = new PubNub({
     publishKey: 'pub-c-9c9ae7fc-36b4-4991-a377-641db3978ce5',
     subscribeKey: 'sub-c-ade885f6-95d8-11e6-b36e-0619f8945a4f'
+});*/
+
+//NEW PUBNUB KEYS
+global.pubnub = new PubNub({
+    publishKey: 'pub-c-b92a7433-a5f0-4847-bfc5-6906ae4a2213',
+    subscribeKey: 'sub-c-b6c31904-4698-11e7-ac6c-0619f8945a4f'
 });
 
 router.get('/', function(req, res, next) {
