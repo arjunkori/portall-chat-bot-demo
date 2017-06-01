@@ -6,11 +6,14 @@ var utility = require('./utility');
 router.get('/pub', function(req, res, next) {
 
     var publishConfig = {
-        channel: "PortallChatBot_Channel",
+        channel: "GAChatBot",
         message: {
             data: {
-                chatMsg: "how do I search BL Number ?",
-                botMsg:true
+                "chatUser": "GA ChatBot",
+                "chatMsg": "Opps! entered search not found",
+                "chatTime": Date.now(),
+                "image": 'http://seeklogo.com/images/G/google-2015-icon-logo-B4217923DD-seeklogo.com.png',
+                "botMsg": true
             }
         }
     }
@@ -20,8 +23,7 @@ router.get('/pub', function(req, res, next) {
 
     pubnub.addListener({
         status: function(statusEvent) {
-            if (statusEvent.category === "PNConnectedCategory") {
-            }
+            if (statusEvent.category === "PNConnectedCategory") {}
         },
         message: function(message) {
             console.log("New Message!!", message);
@@ -32,8 +34,7 @@ router.get('/pub', function(req, res, next) {
     });
     console.log("Subscribing. CLIENT.");
     pubnub.subscribe({
-        channels: ['PortallChatBot_Channel']
+        channels: ['GAChatBot']
     });
 })
 module.exports = router;
-

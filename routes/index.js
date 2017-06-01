@@ -4,16 +4,16 @@ var PubNub = require('pubnub');
 var router = express.Router();
 var utility = require('./utility');
 
-/*global.pubnub = new PubNub({
+global.pubnub = new PubNub({
     publishKey: 'pub-c-9c9ae7fc-36b4-4991-a377-641db3978ce5',
     subscribeKey: 'sub-c-ade885f6-95d8-11e6-b36e-0619f8945a4f'
-});*/
+});
 
 //NEW PUBNUB KEYS
-global.pubnub = new PubNub({
+/*global.pubnub = new PubNub({
     publishKey: 'pub-c-b92a7433-a5f0-4847-bfc5-6906ae4a2213',
     subscribeKey: 'sub-c-b6c31904-4698-11e7-ac6c-0619f8945a4f'
-});
+});*/
 
 router.get('/', function(req, res, next) {
     console.log("################## INSIDE FIRST PAGE ##################");
@@ -61,11 +61,11 @@ router.get('/', function(req, res, next) {
                 switch (finalString) {
                     case 'help':
                         pubnub.publish({
-                            channel: "PortallChatBot_Channel",
+                            channel: "GAChatBot",
                             message: {
                                 "type": "groupMessage",
                                 "data": {
-                                    "chatUser": "PortallChatBot",
+                                    "chatUser": "GA ChatBot",
                                     "chatMsg": "Opps ! Please try diffrent keyword", //'Try following commands \n\t get summary \n\t get paltform \n\t get geo \n\t get browser \n\t get speed.',
                                     "chatTime": _unixTimeStamp,
                                     "image": 'http://seeklogo.com/images/G/google-2015-icon-logo-B4217923DD-seeklogo.com.png',
@@ -79,11 +79,11 @@ router.get('/', function(req, res, next) {
 
                     case 'register':
                         pubnub.publish({
-                            channel: "PortallChatBot_Channel",
+                            channel: "GAChatBot",
                             message: {
                                 "type": "groupMessage",
                                 "data": {
-                                    "chatUser": "PortallChatBot",
+                                    "chatUser": "GA ChatBot",
                                     "chatMsg": 'Go to PORTALL login page, Click on register as company, Fill form',
                                     "chatTime": _unixTimeStamp,
                                     "image": 'http://seeklogo.com/images/G/google-2015-icon-logo-B4217923DD-seeklogo.com.png',
@@ -95,11 +95,11 @@ router.get('/', function(req, res, next) {
 
                     case 'bl':
                         pubnub.publish({
-                            channel: "PortallChatBot_Channel",
+                            channel: "GAChatBot",
                             message: {
                                 "type": "groupMessage",
                                 "data": {
-                                    "chatUser": "PortallChatBot",
+                                    "chatUser": "GA ChatBot",
                                     "chatMsg": "Login PORTALL , Go to Import Menu, Search BL Number",
                                     "chatTime": _unixTimeStamp,
                                     "image": 'http://seeklogo.com/images/G/google-2015-icon-logo-B4217923DD-seeklogo.com.png',
@@ -111,11 +111,11 @@ router.get('/', function(req, res, next) {
 
                     case 'invoice':
                         pubnub.publish({
-                            channel: "PortallChatBot_Channel",
+                            channel: "GAChatBot",
                             message: {
                                 "type": "groupMessage",
                                 "data": {
-                                    "chatUser": "PortallChatBot",
+                                    "chatUser": "GA ChatBot",
                                     "chatMsg": "Login PORTALL , Go to Import Menu, Click on Activities, Click on CFS menu, Click on Final Invoice",
                                     "chatTime": _unixTimeStamp,
                                     "image": 'http://seeklogo.com/images/G/google-2015-icon-logo-B4217923DD-seeklogo.com.png',
@@ -127,11 +127,11 @@ router.get('/', function(req, res, next) {
 
                     case 'edo':
                         pubnub.publish({
-                            channel: "PortallChatBot_Channel",
+                            channel: "GAChatBot",
                             message: {
                                 "type": "groupMessage",
                                 "data": {
-                                    "chatUser": "PortallChatBot",
+                                    "chatUser": "GA ChatBot",
                                     "chatMsg": "Login PORTALL , Go to Import Menu, Click on Activities, Click on Line menu, Click on EDO",
                                     "chatTime": _unixTimeStamp,
                                     "image": 'http://seeklogo.com/images/G/google-2015-icon-logo-B4217923DD-seeklogo.com.png',
@@ -143,11 +143,11 @@ router.get('/', function(req, res, next) {
 
                     case 'shipping':
                         pubnub.publish({
-                            channel: "PortallChatBot_Channel",
+                            channel: "GAChatBot",
                             message: {
                                 "type": "groupMessage",
                                 "data": {
-                                    "chatUser": "PortallChatBot",
+                                    "chatUser": "GA ChatBot",
                                     "chatMsg": "Login PORTALL , Go to Export Menu,  select shipping bill number",
                                     "chatTime": _unixTimeStamp,
                                     "image": 'http://seeklogo.com/images/G/google-2015-icon-logo-B4217923DD-seeklogo.com.png',
@@ -159,11 +159,11 @@ router.get('/', function(req, res, next) {
 
                     case 'ssr':
                         pubnub.publish({
-                            channel: "PortallChatBot_Channel",
+                            channel: "GAChatBot",
                             message: {
                                 "type": "groupMessage",
                                 "data": {
-                                    "chatUser": "PortallChatBot",
+                                    "chatUser": "GA ChatBot",
                                     "chatMsg": "Login PORTALL , Go to Export menu, Click on CFS icon, click on Special service request",
                                     "chatTime": _unixTimeStamp,
                                     "image": 'http://seeklogo.com/images/G/google-2015-icon-logo-B4217923DD-seeklogo.com.png',
@@ -175,11 +175,11 @@ router.get('/', function(req, res, next) {
 
                     case 'shipment':
                         pubnub.publish({
-                            channel: "PortallChatBot_Channel",
+                            channel: "GAChatBot",
                             message: {
                                 "type": "groupMessage",
                                 "data": {
-                                    "chatUser": "PortallChatBot",
+                                    "chatUser": "GA ChatBot",
                                     "chatMsg": "Login PORTALL , Go to Declare shipment",
                                     "chatTime": _unixTimeStamp,
                                     "image": 'http://seeklogo.com/images/G/google-2015-icon-logo-B4217923DD-seeklogo.com.png',
@@ -191,11 +191,11 @@ router.get('/', function(req, res, next) {
 
                     case 'password':
                         pubnub.publish({
-                            channel: "PortallChatBot_Channel",
+                            channel: "GAChatBot",
                             message: {
                                 "type": "groupMessage",
                                 "data": {
-                                    "chatUser": "PortallChatBot",
+                                    "chatUser": "GA ChatBot",
                                     "chatMsg": "Login PORTALL, hover on setting, click on change password",
                                     "chatTime": _unixTimeStamp,
                                     "image": 'http://seeklogo.com/images/G/google-2015-icon-logo-B4217923DD-seeklogo.com.png',
@@ -206,11 +206,11 @@ router.get('/', function(req, res, next) {
                         break;
                     default:
                         pubnub.publish({
-                            channel: "PortallChatBot_Channel",
+                            channel: "GAChatBot",
                             message: {
                                 "type": "groupMessage",
                                 "data": {
-                                    "chatUser": "PortallChatBot",
+                                    "chatUser": "GA ChatBot",
                                     "chatMsg": "Opps! entered search not found",
                                     "chatTime": _unixTimeStamp,
                                     "image": 'http://seeklogo.com/images/G/google-2015-icon-logo-B4217923DD-seeklogo.com.png',
@@ -225,7 +225,7 @@ router.get('/', function(req, res, next) {
 
     console.log("Subscribing..");
     pubnub.subscribe({
-        channels: ['PortallChatBot_Channel']
+        channels: ['GAChatBot']
     });
 });
 
